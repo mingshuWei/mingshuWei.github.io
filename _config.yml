@@ -98,6 +98,6 @@ service-worker: true
 friends: [
 {
         title: "简书·BY",
-        href: ""https://www.jianshu.com/u/74ab8351ee86"
+        href: "https://www.jianshu.com/u/74ab8351ee86"
     }
 ]
