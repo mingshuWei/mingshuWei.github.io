@@ -24,7 +24,7 @@ tags:
     对于其他的HandlerChecker，需要判断线程的Looper是否处于Idling，若为空就说明前一个消息已经执行完毕正在等下一个，消息循环肯定没阻塞，不用继续检测直接跳过本轮。
     如果线程的消息循环不是Idling状态，说明服务的主线程正在处理某个消息，有阻塞的可能，就需要使用PostAtFrontOfQueue发出消息到消息队列，并记录下当前系统时间，同时将mComplete置为false，标明已经发出一个消息正在等待处理。
     
-    ```swift
+    ```
     public void scheduleCheckLocked() {  
         if (mMonitors.size() == 0 && mHandler.getLooper().getQueue().isPolling()) {  
             // If the target looper has recently been polling, then  
@@ -50,7 +50,7 @@ tags:
     ```
     如果线程的消息队列没有阻塞，PostAtFrontOfQueue很快就会触发HandlerChecker的run方法。对于foreground thread的HandlerChecker，它会回调被监控服务的monitor方法，对其关键区上锁并马上释放，以检查是否存在死锁或阻塞。对于其他线程，仅需要将mComplete标记为true，表明消息已经处理完成即可。
     
-    ```swift
+    ```
     @Override  
     public void run() {  
             final int size = mMonitors.size();  
