@@ -2,8 +2,8 @@
 layout:     post
 title:      Android handler 模块详解
 subtitle:   handler 实现机制 源码解析
-date:       2017-03-30
-author:     
+date:       2017-05-06
+author:     mingshu
 catalog: true
 tags:
     - Handler
